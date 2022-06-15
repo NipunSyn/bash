@@ -1,0 +1,71 @@
+who am i - get login time
+pwd - get present working directory
+cal - view calendar
+    cal 7 2006 (for calendar of July 2006) or
+    cal feb 2010
+date - get datetime
+    date '+DATE:%m-%y%nTIME:%H:%M:%S' (custom date format)
+touch - create txt files 
+    touch text1 text2 text3
+mkdir - create a directory (create a folder in pwd)
+    mkdir documents/bash (create folder in documents if pwd is home)
+cd - change directory
+cat - create non empty text file
+    - needs to be used with > symbol to write
+        cat > test (will create a text fill named test)
+    - can type in the next lines and close doc using ctrl+d
+    - needs to be used with < symbol to read the file
+        cat < test (will display the text)
+    - to merge files, use:
+        cat test1 test2 > output
+        - creates a file named output with text in test1 followed by text in test2
+        cat < output (to display this file)
+mv - to rename file 
+    mv original_name new_name
+    - works for directories as well
+rm - remove files or directories
+    rm file_name
+    rm -r directory_name or rmdir directory_name for directory
+    - use * to delete using substring
+        rm -r *text* (deletes all files that have text in their name)
+        rm -r *.txt (deletes all files ending with .txt)
+cp - used to copy files from one location to another
+    cp file1 ../new/ (copies file1 to folder new in previous directory)
+ln - used to create a link to a file
+    ln filename link_name
+    - editing source file will edit the linked file (hard link)
+    ln -s filename link_name (for soft link)
+        ln -s file1 soft_file1
+    - soft link doesn't work if the source file is deleted whereas hard link does 
+ls - view contents of a directory
+    ls documents (or any directory name to view contents there)
+    ls -l (long listing, used for viewing file permissions)
+    ls -a (displays all files- including hidden)
+chmod - change file permissions
+    chmod numeric_value file_name
+    chmod 777 test (gives read, write and execute to all users)
+uname - displays information of the system
+    uname -a (displays all the information)
+file - similar to ls (gives more detail)
+    used as file * (* means all files and folders)
+wc - gives lines, words and characters in a file 
+    wc -l (just prints the linecount)
+    wc -w (just prints the wordcount)
+    wc -c (just prints the character count)
+nano - used to edit a file 
+    nano filename.txt 
+less - used to open a large file (easier to page down)
+sort - displays the sorted output of a file 
+    sort filename
+    - if you just type sort and press return, it will expect some input and sort that
+cut - literally cuts through a fal
+    - default delimiter is \t 
+    - -d"-" is used to change delimiter to - and so on 
+    - -f 1,3 means we want to extract field 1 and 3
+    cut -d"-" -f 1,3 filename
+dd  - used to convert a file's contents and copy to another 
+    - if = input file
+    - of = outpuf file
+    - conv = the conversion we want to do
+    dd if=test of=out conv=ucase 
+    dd if=test of=out2 conv=ebcdic (european character encoding)
